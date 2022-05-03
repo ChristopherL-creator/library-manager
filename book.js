@@ -17,7 +17,7 @@ class Book{
                            'Author: ' + this.author + '\n' + 
                            'Publisher: ' + this.publisher + '\n' + 
                            'Type: ' + this.type + '\n'+  
-                           'Price: ' + this.price + '$' + '\n' + 
+                           'Price: ' + this.getPublicPrice() + '$' + '\n' + 
                            'Copies: ' + this.copies + ' copies' + '\n' + 
                            'Pages: ' + this.pages + ' pages' + '\n' + 
                            'Year of Production: ' + this.yop + '\n' +
