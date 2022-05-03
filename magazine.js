@@ -20,14 +20,18 @@ class Magazine extends Publication{
     } 
 
     getPublicPrice(magazine){ 
-        // price di partenza + tasse 10% - eventuale discount in % + 30%; 
-                const tax = this.price * 20 / 100; 
-                const discount = this.price * this.discount / 100; 
-                const library = this.price * 30 / 100; 
+//  price di partenza + tasse 10% - eventuale discount in % + 30%;  
+        const publicPriceWOTax = super.getPublicPriceWOTax();
+            const tax = this.price * 20 / 100; 
         
-                const publicPrice = this.price + tax - discount + library; 
-                // const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100);
-        
-                return publicPrice;
+            const publicPrice = publicPriceWOTax + tax; 
+//          const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100);
+            
+                        
+//          const roundedPrice = this.round(publicPrice);
+            
+//          return roundedPrice; 
+
+            return publicPrice;
             }
 }
