@@ -1,27 +1,17 @@
-class Book{ 
+class Book extends Publication{ 
 
     constructor(title, author, publisher, type, price, copies, pages, yop, discount){ 
-        this.title = title; 
-        this.author = author; 
-        this.publisher = publisher; 
-        this.type = type; 
-        this.price = price; 
-        this.copies = copies; 
-        this.pages = pages; 
+        super(title, publisher, type, price, copies, discount);
         this.yop = yop; 
-        this.discount = discount; 
+        this.pages = pages; 
+        this.author = author;
     } 
 
     toString(){ 
-        const bookString = 'Title: ' + this.title + '\n' + 
+        const bookString = super.toString() + '\n' +
                            'Author: ' + this.author + '\n' + 
-                           'Publisher: ' + this.publisher + '\n' + 
-                           'Type: ' + this.type + '\n'+  
-                           'Price: ' + this.getPublicPrice() + '$' + '\n' + 
-                           'Copies: ' + this.copies + ' copies' + '\n' + 
                            'Pages: ' + this.pages + ' pages' + '\n' + 
-                           'Year of Production: ' + this.yop + '\n' +
-                           'discount: ' + this.discount + '%'; 
+                           'Year of Production: ' + this.yop;
                            
         return bookString;
     } 

@@ -1,28 +1,21 @@
-class Magazine{ 
+class Magazine extends Publication{ 
+//  collego Magazine a genitore Publication; 
 
-    constructor(title, editor, periodicity, type, price, copies, discount, release){ 
-        this.title = title; 
-        this.editor = editor; 
+    constructor(title, publisher, periodicity, type, price, copies, discount, release){ 
+        super(title, publisher, type, price, copies, discount);
         this.periodicity = periodicity; 
-        this.type = type; 
-        this.price = price; 
-        this.copies = copies; 
-        this.discount = discount; 
-        this.release = release;
+        this.release = release; 
+//  con super importo proprietà comuni da Publication, devo solo aggiungere quelle uniche di Magazine sotto;
     } 
 
     magToString(){  
+
         const periodicity = this.periodicity === 'w' ? 'weekly' : 'monthly';
 
-        const magString = 'Title: ' + this.title + '\n' + 
-                          'Editor: ' + this.editor + '\n' + 
-                          'Periodicity: ' + periodicity + '\n' + 
-                          'Type: ' + this.type + '\n'+  
-                          'Price: ' + this.getPublicPrice() + '$'+ '\n' + 
-                          'Copies: ' + this.copies + ' copies' + '\n' + 
-                          'discount: ' + this.discount + '%' + '\n' + 
+        const magString = super.toString() + '\n' + 
+                          'Periodicity: ' + periodicity + '\n' +  
                           'release: ' + '#' + this.release;
-                           
+
         return magString;
     } 
 
