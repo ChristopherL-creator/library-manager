@@ -33,6 +33,7 @@ class Magazine{
                 const library = this.price * 30 / 100; 
         
                 const publicPrice = this.price + tax - discount + library; 
+                // const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100);
         
                 return publicPrice;
             }
