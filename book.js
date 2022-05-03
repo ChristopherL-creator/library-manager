@@ -17,11 +17,11 @@ class Book{
                            'Author: ' + this.author + '\n' + 
                            'Publisher: ' + this.publisher + '\n' + 
                            'Type: ' + this.type + '\n'+  
-                           'Price: ' + this.price + '\n' + 
-                           'Copies: ' + this.copies + '\n' + 
-                           'Pages: ' + this.pages + '\n' + 
-                           'yop: ' + this.yop + '\n' +
-                           'discount: ' + this.discount; 
+                           'Price: ' + this.price + '$' + '\n' + 
+                           'Copies: ' + this.copies + ' copies' + '\n' + 
+                           'Pages: ' + this.pages + ' pages' + '\n' + 
+                           'Year of Production: ' + this.yop + '\n' +
+                           'discount: ' + this.discount + '%'; 
                            
         return bookString;
     } 

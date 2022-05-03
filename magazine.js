@@ -18,10 +18,10 @@ class Magazine{
                           'Editor: ' + this.editor + '\n' + 
                           'Periodicity: ' + periodicity + '\n' + 
                           'Type: ' + this.type + '\n'+  
-                          'Price: ' + this.price + '\n' + 
-                          'Copies: ' + this.copies + '\n' + 
-                          'discount: ' + this.discount + '\n' + 
-                          'release: ' + this.release;
+                          'Price: ' + this.price + '$'+ '\n' + 
+                          'Copies: ' + this.copies + ' copies' + '\n' + 
+                          'discount: ' + this.discount + '%' + '\n' + 
+                          'release: ' + '#' + this.release;
                            
         return magString;
     } 
