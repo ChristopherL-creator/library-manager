@@ -1,13 +1,15 @@
 // creo classe superiore con proprietà comuni a sotto oggetti;
 class Publication{ 
 
-    constructor(title, publisher, type, price, copies, discount){ 
+    constructor(title, publisher, type, price, copies, discount, tax){ 
+//  assumo che tax sia uguale, e lo sposto nel genitore;
         this.title = title; 
         this.publisher = publisher; 
         this.type = type; 
         this.price = price; 
         this.copies = copies; 
         this.discount = discount; 
+        this.tax = tax;
     }
 
     toString(){ 
@@ -21,19 +23,28 @@ class Publication{
         return pubString;
     } 
 
-    getPublicPriceWOTax(){ 
-        const discount = this.price * this.discount / 100; 
+    // getPublicPriceWOTax(){ 
+    //     const discount = this.price * this.discount / 100; 
+    //     const library = this.price * 30 / 100; 
+
+    //     const publicPriceWOTax = this.price - discount + library;  
+
+    getPublicPrice(){ 
+        const discount = this.price * this.discount / 100;
         const library = this.price * 30 / 100; 
+        const tax = this.price * this.tax / 100; 
+        const publicPrice = this.price + tax - discount + library; 
+        const roundedPublicPrice = this.round(publicPrice, 2); 
+        return roundedPublicPrice;
+    }
 
-        const publicPriceWOTax = this.price - discount + library; 
+     round(number, decimalPlace){ 
+         const roundedString = number.toFixed(decimalPlace); 
+         const roundedNumber = parseFloat(roundedString); 
+         return roundedNumber;
+     }
 
-//      round(number, decimalPlace){ 
-//          const roundedString = number.toFixed(decimalPlace); 
-//          const roundedNumber = parseFloat(roundedString); 
-//          return roundedNumber;
-//      }
+        // return publicPriceWOTax;
 
-        return publicPriceWOTax;
-    } 
 
 }

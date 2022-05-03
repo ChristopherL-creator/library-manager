@@ -1,7 +1,7 @@
 class Book extends Publication{ 
 
     constructor(title, author, publisher, type, price, copies, pages, yop, discount){ 
-        super(title, publisher, type, price, copies, discount);
+        super(title, publisher, type, price, copies, discount, 10);
         this.yop = yop; 
         this.pages = pages; 
         this.author = author;
@@ -16,18 +16,19 @@ class Book extends Publication{
         return bookString;
     } 
 
-    getPublicPrice(book){ 
-//   price di partenza + tasse 10% - eventuale discount in % + 30%;  
-        const publicPriceWOTax = super.getPublicPriceWOTax();
-        const tax = this.price * 10 / 100; 
+//     getPublicPrice(book){ 
+// //   price di partenza + tasse 10% - eventuale discount in % + 30%;  
+//         const publicPriceWOTax = super.getPublicPriceWOTax();
+//         const tax = this.price * 10 / 100; 
 
-        const publicPrice = publicPriceWOTax + tax; 
-//      const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100); 
+//         const publicPrice = publicPriceWOTax + tax; 
+        
+// //      const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100); 
 
-//      const roundedPrice = this.round(publicPrice);
+// //      const roundedPrice = this.round(publicPrice);
 
-//      return roundedPrice; 
+// //      return roundedPrice; 
 
-        return publicPrice;
-            }
+//         return publicPrice;
+//             }
 }

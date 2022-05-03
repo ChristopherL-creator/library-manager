@@ -2,7 +2,8 @@ class Magazine extends Publication{
 //  collego Magazine a genitore Publication; 
 
     constructor(title, publisher, periodicity, type, price, copies, discount, release){ 
-        super(title, publisher, type, price, copies, discount);
+//  scrivo semplicemente valore tax in super;    
+        super(title, publisher, type, price, copies, discount, 20);
         this.periodicity = periodicity; 
         this.release = release; 
 //  con super importo proprietà comuni da Publication, devo solo aggiungere quelle uniche di Magazine sotto;
@@ -19,19 +20,19 @@ class Magazine extends Publication{
         return magString;
     } 
 
-    getPublicPrice(magazine){ 
-//  price di partenza + tasse 10% - eventuale discount in % + 30%;  
-        const publicPriceWOTax = super.getPublicPriceWOTax();
-            const tax = this.price * 20 / 100; 
+//     getPublicPrice(magazine){ 
+// //  price di partenza + tasse 10% - eventuale discount in % + 30%;  
+//         const publicPriceWOTax = super.getPublicPriceWOTax();
+//             const tax = this.price * 20 / 100; 
         
-            const publicPrice = publicPriceWOTax + tax; 
-//          const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100);
-            
-                        
-//          const roundedPrice = this.round(publicPrice);
-            
-//          return roundedPrice; 
+//             const publicPrice = publicPriceWOTax + tax; 
 
-            return publicPrice;
-            }
+// //          const publicPrice = this.price + (this.price * 20 / 100) - (this.price * this.discount / 100) + (this.price * 30 / 100);            
+
+// //          const roundedPrice = this.round(publicPrice);
+
+// //          return roundedPrice; 
+
+//             return publicPrice;
+//             }
 }
