@@ -34,5 +34,24 @@ class Magazine extends Publication{
 // //          return roundedPrice; 
 
 //             return publicPrice;
-//             }
+//             } 
+
+//  funzioni getter e setter: 
+
+//  nominate ponendo underscore(_) davanti; 
+//  in javascript tutte variabili sono pubbliche; con underscore indico che variabile è protetta da getter o setter; 
+
+//  *nel constructor magazine {this._releaseDate = releaseDate.getTime();} *release date da constructor di magazine; 
+
+//  funzione getter, per nascondere codice dietro a proprietà: 
+//  get releaseDate(){ 
+    //  const date = new Date(this._releaseDate); 
+    //  return date;
+//  } 
+
+//  funzione setter;
+//  set releaseDate(value){ 
+    //  const time = value.getTime(); 
+    // this._releaseDate = time;
+//  }
 }

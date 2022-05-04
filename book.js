@@ -1,6 +1,7 @@
 class Book extends Publication{ 
 
-    constructor(title, author, publisher, type, price, copies, pages, yop, discount){ 
+    constructor(title, author, publisher = 'non disp', type = 'non class', price = -1, copies = 0, pages = -1, yop = -1, discount = 0){  
+// i default vanno inseriti direttamente nel costruttore;
         super(title, publisher, type, price, copies, discount, 10);
         this.yop = yop; 
         this.pages = pages; 
@@ -8,10 +9,15 @@ class Book extends Publication{
     } 
 
     toString(){ 
+
+        const pages = this.pages > 0 ? this.pages : 'Sconosciuto'; 
+
+        const year = this.yop > 0 ? this.yop : 'Sconosciuto'; 
+
         const bookString = super.toString() + '\n' +
                            'Author: ' + this.author + '\n' + 
-                           'Pages: ' + this.pages + ' pages' + '\n' + 
-                           'Year of Production: ' + this.yop;
+                           'Pages: ' + pages + '\n' + 
+                           'Year of Production: ' + year;
                            
         return bookString;
     } 

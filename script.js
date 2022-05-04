@@ -6,6 +6,17 @@ const book2 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 'Ace Books', '
 console.log(book2); 
 console.log(book2.toString()); 
 
+book1.title = 'Il signore degli Anelli'; 
+//  posso correggere proprietà oggetto; 
+
+//  book1._releaseDate = 
+
+const book3 = new Book('Odissea', 'Omero');
+console.log(book2); 
+console.log(book2.toString());  
+
+//  magazine.releaseDate = new Date(2022, 0, 15);
+
 const magazine1 = new Magazine('Vogue', 'Anna Wintour', 'w', 'fashion', 10, 156464643548, 15, 256);
 console.log(magazine1); 
 console.log(magazine1.magToString()); 
@@ -13,3 +24,16 @@ console.log(magazine1.magToString());
 const magazine2 = new Magazine('Focus', 'Arnoldo Mondadori Editori', 'm', 'Scienza', 7, 64643548, 10, 200);
 console.log(magazine2); 
 console.log(magazine2.magToString()); 
+
+const number = 11.03067; 
+console.log(Math.round(number)); 
+
+const obs = new TemperatureObservation(30, new Date(2022, 5, 3), [44.325, 14.345]); 
+
+obs.tempF = 90;
+
+console.log(obs.getFTemp); 
+
+console.log(obs.tempF);
+
+
